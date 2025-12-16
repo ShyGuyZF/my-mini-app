@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реабилитация и уход</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- PWA мета-теги -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Greenway">
+
+    <!-- Иконки для iOS -->
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="apple-touch-startup-image" href="assets/icons/splash-screen.png">
+
+    <!-- Цвета для мобильных браузеров -->
+    <meta name="theme-color" content="#C7A989">
+    <meta name="msapplication-navbutton-color" content="#C7A989">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#C7A989">
+
+    <!-- Предзагрузка важных ресурсов -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="app.js" as="script">
+</head>
+<body>
+    <!-- Верхняя панель -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">G</span>
+            <span class="logo-text">Пульс жизни</span>
+        </div>
+        <button class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main-content" id="app-content">
+        <!-- Контент будет меняться здесь -->
+        <div class="screen" id="assistant-screen">
+            <h1>Помощник Пульса жизни</h1>
+            <p>Здесь будет чат с ботом</p>
+        </div>
+    </main>
+
+    <!-- Нижняя навигация -->
+    <nav class="bottom-nav">
+        <button class="nav-item active" data-screen="assistant">
+            <i class="fas fa-comment-medical"></i>
+            <span>Помощник</span>
+        </button>
+        <button class="nav-item" data-screen="library">
+            <i class="fas fa-book-open"></i>
+            <span>Библиотека</span>
+        </button>
+        <button class="nav-item" data-screen="goals">
+            <i class="fas fa-chart-line"></i>
+            <span>Мои цели</span>
+        </button>
+        <button class="nav-item" data-screen="about">
+            <i class="fas fa-info-circle"></i>
+            <span>О нас</span>
+        </button>
+        <button class="nav-item" data-screen="profile">
+            <i class="fas fa-user"></i>
+            <span>Профиль</span>
+        </button>
+    </nav>
+    <div id="chat" class="chat"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
