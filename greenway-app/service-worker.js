@@ -1,17 +1,19 @@
 // Версия кэша - меняйте при обновлении приложения
-const CACHE_NAME = 'greenway-v1.0';
+const CACHE_NAME = 'greenway-v1.1';
 const APP_SHELL = [
-    '/',
-    '/index.html',
-    '/styles.css',
-    '/app.js',
-    '/data/articles.json',
-    '/manifest.json',
-    // Иконки
-    '/assets/icons/icon-72x72.png',
-    '/assets/icons/icon-192x192.png',
-    '/assets/icons/icon-512x512.png'
+    './',
+    './index.html',
+    './styles.css',
+    './app.js',
+    './data/articles.json',
+    './manifest.json',
+    './assets/icons/icon-72x72.png',
+    './assets/icons/icon-192x192.png',
+    './assets/icons/icon-512x512.png',
+    './offline.html'
+
 ];
+
 
 // Установка Service Worker и кэширование ресурсов
 self.addEventListener('install', event => {
@@ -80,7 +82,7 @@ self.addEventListener('fetch', event => {
 
                         // Для страниц возвращаем офлайн-страницу
                         if (event.request.mode === 'navigate') {
-                            return caches.match('/offline.html');
+                            return caches.match('./offline.html');
                         }
 
                         return new Response('Нет подключения к интернету', {
